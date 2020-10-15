@@ -1,5 +1,5 @@
 # 課題1 レポート
-学籍番号　氏名
+35319057　吉田 龍生
 
 
 ## 課題
@@ -62,6 +62,28 @@ typedef struct {
 
 ## ソースコードの説明
 
+l.67 int型のiとresult=-1を定義
+
+l.70 for文でiがsizeより大きくなるか等しくなるまで回す
+
+l.71 もしデータの中のIDとkeyの値が一致すればresultの値をiにしてfor文を抜ける
+
+l.78 resultの値を返す
+
+
+l.86　int型のposとresult=-1を定義
+
+l.92 while文でleftがrightより大きくなるまで繰り返す
+
+l.93 pos1の値を定義
+
+l.94 もしkeyがpos番目のIDと一致すれば、resultの値をposにしてwhlie文を抜ける
+
+l.97 keyがpos番目のIDより値が大きければ、leftをpos+1とする
+
+l.99 上記以外ならば、rightをpos-1とする
+
+l.103 resultの値を返す
 
 
 
