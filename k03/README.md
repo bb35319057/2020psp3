@@ -56,25 +56,64 @@ l.35 検索する文字が現れなかったら、NULLを返す
 
 l.42 int型でそれぞれ定義
 
-l.51 ずらし量テーブルを作成
+l.50 ずらし量テーブルを作成
 
-l.61 while文でindexが最後尾の前にあるまでループ
+l.60 while文でindexが最後尾の前にあるまでループ
 
 l.62 for文でキーの最後の文字から1文字ずつ前に行き、先頭に行くまでループ
 
-l.63 もし一致したらcountに1を加算し、countとキーの長さが一致したらreturnで検索する文字列が出現した場所を返す
+l.63 確認のためのコード
 
-l.68 一致しなかったら、l.62のfor文を抜ける
+l.69 もし一致したらindexを1文字前にずらし、countに1を加算し、countとキーの長さが一致したらreturnで検索する文字列が出現した場所を返す
 
-l.74 次の比較開始位置を計算
+l.75 一致しなかったら、次の比較開始位置を計算し、countを0に戻してl.62のfor文を抜ける
 
-l.76 検索する文字列が現れなかったら、NULLを返す
+l.83 検索する文字列が現れなかったら、NULLを返す
 
 
 ## 出力結果
 
 ```
 Force Search. Find keyword at:wind in my hair.
+On a dark deseart highway, cool wind in my hair.
+wind
+count= 0
+On a dark deseart highway, cool wind in my hair.
+ wind
+count= 0
+On a dark deseart highway, cool wind in my hair.
+     wind
+count= 0
+On a dark deseart highway, cool wind in my hair.
+         wind
+count= 0
+On a dark deseart highway, cool wind in my hair.
+             wind
+count= 0
+On a dark deseart highway, cool wind in my hair.
+                 wind
+count= 0
+On a dark deseart highway, cool wind in my hair.
+                     wind
+count= 0
+On a dark deseart highway, cool wind in my hair.
+                         wind
+count= 0
+On a dark deseart highway, cool wind in my hair.
+                             wind
+count= 0
+On a dark deseart highway, cool wind in my hair.
+                                wind
+count= 0
+On a dark deseart highway, cool wind in my hair.
+                               wind
+count= 1
+On a dark deseart highway, cool wind in my hair.
+                              wind
+count= 2
+On a dark deseart highway, cool wind in my hair.
+                             wind
+count= 3
 BM Search. Find keyword at: wind in my hair.
 ```
 
