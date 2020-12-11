@@ -41,7 +41,7 @@ char* BMSearch(char text[], char key[])
 {
     int text_len = strlen(StrOriginal);
     int key_len = strlen(StrKey);
-    int index,key_index = key_len -1;
+    int key_index = key_len -1;
     int i,n=0;
     int count=0;
     int table[256];
@@ -56,6 +56,8 @@ char* BMSearch(char text[], char key[])
         m--;
     }
 
+    int index = key_len - 1;
+    int start_index = key_len - 1;
 
     while(index < text_len){
 
@@ -72,12 +74,17 @@ char* BMSearch(char text[], char key[])
                 if (count == key_len) {
                     return &text[index];
                 }
-             } else {
-                index = index + table[text[index]] + count;
+            } else  {
                 count = 0;
                 break ;
             }
         }
+
+    index = index + table[text[index]];
+        if(index <= start_index){
+            index = start_index + 1;
+        }
+    start_index = index;
 
     }
     return NULL;
